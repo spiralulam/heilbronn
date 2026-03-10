@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Gurobi solver outputs
+*.sol
+*.mst
+*.ilp
+*.lp
+*.mps
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.synctex.gz
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
