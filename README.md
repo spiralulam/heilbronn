@@ -18,6 +18,8 @@ Code and data for the paper
 
 ## Interactive App
 
+The interactive visualization app was conceived by Hendrik Ewe, who also provided the first version.
+
 `app.py` is a Tkinter application that lets you explore the Heilbronn configurations interactively:
 
 - Switch between best-known configurations for n = 3, …, 16
@@ -53,10 +55,6 @@ python exact_coordinates/exact_coordinates.py 7
   year    = {2026},
 }
 ```
-
-## Acknowledgments
-
-The interactive visualization app was conceived by Hendrik Ewe, who also provided the first version.
 
 ## License
 
