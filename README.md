@@ -10,14 +10,29 @@ Code and data for the paper
 
 ## Contents
 
+- **app.py** — Interactive visualizer for Heilbronn configurations (drag points to explore)
 - **optimization_models/** — Gurobi MIP formulations (baseline and strengthened)
 - **best-known-configurations/** — Point configurations for n = 3, …, 16 as JSON
 - **exact_coordinates/** — Exact symbolic coordinates for n = 5, …, 9 (SymPy)
 - **figures/** — Configuration plots
 
+## Interactive App
+
+`app.py` is a Tkinter application that lets you explore the Heilbronn configurations interactively:
+
+- Switch between best-known configurations for n = 3, …, 16
+- Drag points with the mouse and see the smallest triangles update in real time
+- Critical triangles are colored using the matplotlib tab10 palette (matching the paper figures) with true alpha transparency
+
+```bash
+pip install Pillow   # only additional dependency
+python app.py
+```
+
 ## Requirements
 
 - Python ≥ 3.9
+- [Pillow](https://python-pillow.org/) (for the interactive app)
 - [Gurobi](https://www.gurobi.com/) ≥ 11.0 (for the MIP models)
 - [SymPy](https://www.sympy.org/) ≥ 1.14 (for the exact coordinates)
 
@@ -38,6 +53,10 @@ python exact_coordinates/exact_coordinates.py 7
   year    = {2026},
 }
 ```
+
+## Acknowledgments
+
+The interactive visualization app was conceived by Hendrik Ewe, who also provided the first version.
 
 ## License
 
