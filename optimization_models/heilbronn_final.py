@@ -1,8 +1,9 @@
-"""Strengthened MIP for the Heilbronn triangle problem (Section 3.4 of the paper).
+"""Strengthened model of the first submission (Section 3.4 of that version).
 
 Five boundary points, bilinear products w[i,j] = x[i]*y[j], and
-partially fixed triangle orientations. Certifies optimality for n = 9
-in about 15 minutes.
+partially fixed triangle orientations. Solves n = 9 to optimality within
+solver tolerances in about 15 minutes. The model of the revised paper is
+experiments/model.py.
 """
 from gurobipy import Model, GRB
 from itertools import combinations, product

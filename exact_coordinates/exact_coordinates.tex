@@ -4,32 +4,35 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 
-\title{Exact Coordinates for Optimal Heilbronn Configurations\\[4pt]
+\title{Exact Coordinates for Heilbronn Configurations\\[4pt]
        \large $n = 5, \ldots, 9$ on the Unit Square}
-\author{Companion to: N.\ Sudermann-Merx, \emph{From Computational Certification to Exact Coordinates:
-Heilbronn's Triangle Problem on the Unit Square}, 2026.}
+\author{Companion to: N.\ Sudermann-Merx, \emph{From Global Optimization to Exact Coordinates:
+Heilbronn's Triangle Problem on the Unit Square Using Mixed-Integer Nonlinear Optimization}, 2026.}
 \date{}
 
 \begin{document}
 \maketitle
 
 \noindent
-This document lists the certified optimal coordinates for
+This document lists exact coordinates of configurations for
 Heilbronn's triangle problem on the unit square~$[0,1]^2$
 for $n = 5, \ldots, 9$.
-All configurations are globally optimal, certified by solving a
-mixed-integer quadratically constrained program (MIQCP) with Gurobi
-and then deriving exact symbolic coordinates with SymPy.
+They were obtained by solving a mixed-integer nonlinear program (MINLP)
+with Gurobi to global optimality within solver tolerances and then deriving
+exact symbolic coordinates with SymPy. All triangle areas are verified in exact
+arithmetic. The configurations are proven optimal for $n\le 8$ (see the paper
+for references). For $n=9$, the value is a rigorous lower bound that matches
+the solver's numerical upper bound, but no rigorous proof of optimality is known.
 The derivation is fully automated by the script
 \texttt{exact\_coordinates.py} included in this repository.
 
 Points are labeled $1, \ldots, n$.
-We denote the optimal minimum triangle area by~$\Delta_n$.
+We denote the minimum triangle area of the listed configuration by~$\Delta(P)$, which equals $\Delta_n$ for $n\le 8$.
 
 %% ===================================================================
 \section*{$n = 5$: \quad $\Delta_5 = \dfrac{\sqrt{3}}{9} \approx 0.19245$}
 
-Four critical triangles. Unique optimal configuration.
+Four critical triangles. The polynomial system of the critical triangles has a unique solution in the unit square.
 
 \begin{center}
 \begin{tabular}{c c c}
@@ -95,7 +98,7 @@ $7$ & $\dfrac{2(-a^2+3a-1)}{a^3-4a^2+5a-2}$ & $-\dfrac{2a}{a-1}$ \\[8pt]
 \section*{$n = 8$: \quad $\Delta_8 = -\dfrac{1}{36}+\dfrac{\sqrt{13}}{36} \approx 0.07238$}
 
 Twelve critical triangles. Point-symmetric configuration with
-unique optimal solution involving $\sqrt{13}$.
+the polynomial system of the critical triangles has a unique solution in the unit square, involving $\sqrt{13}$ (this does not imply global uniqueness).
 
 \begin{center}
 \begin{tabular}{c c c}
@@ -115,10 +118,10 @@ $8$ & $\frac{1}{6}+\frac{\sqrt{13}}{6}$ & $\frac{2}{9}+\frac{\sqrt{13}}{9}$ \\
 \end{center}
 
 %% ===================================================================
-\section*{$n = 9$: \quad $\Delta_9 = -\dfrac{11}{64}+\dfrac{9\sqrt{65}}{320} \approx 0.05488$}
+\section*{$n = 9$: \quad $\Delta(P) = -\dfrac{11}{64}+\dfrac{9\sqrt{65}}{320} \approx 0.05488$}
 
 Eleven critical triangles. Configuration with four-fold rotational
-symmetry; unique optimal solution involving $\sqrt{65}$.
+symmetry. The polynomial system of the critical triangles has a unique solution in the unit square, involving $\sqrt{65}$ (this does not imply global uniqueness).
 
 \begin{center}
 \begin{tabular}{c c c}

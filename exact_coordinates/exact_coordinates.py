@@ -1,6 +1,6 @@
 """Exact algebraic coordinates for optimal Heilbronn configurations, n = 5..9.
 
-Reads the certified numerical solutions produced by the Gurobi MIP model,
+Reads the numerical solutions produced by the Gurobi MINLP model,
 identifies critical triangles, solves the resulting equal-area system
 symbolically, and verifies the result.
 """
@@ -10,14 +10,14 @@ import sympy as sp
 from itertools import combinations
 from pathlib import Path
 
-SOLUTION_DIR = Path(__file__).parent / "certified_optimal_points_square"
+SOLUTION_DIR = Path(__file__).parent / "solver_solutions_square"
 
 
 # ── shared helpers ──────────────────────────────────────────────────────────
 
 def load_solution(n):
-    """Parse certified-solution JSON.  Returns (coords_dict, z)."""
-    with open(SOLUTION_DIR / f"certified_solution_n={n}.json") as f:
+    """Parse a solver solution JSON.  Returns (coords_dict, z)."""
+    with open(SOLUTION_DIR / f"solution_n={n}.json") as f:
         data = json.load(f)
     v = {r["VarName"]: r["X"] for r in data["Vars"]}
     # The MIP model fixes: p0 left (x0=0), p1 bottom (y1=0),
