@@ -5,9 +5,9 @@
 \usepackage{hyperref}
 
 \title{Exact Coordinates for Heilbronn Configurations\\[4pt]
-       \large $n = 5, \ldots, 9$ on the Unit Square}
-\author{Companion to: N.\ Sudermann-Merx, \emph{From Global Optimization to Exact Coordinates:
-Heilbronn's Triangle Problem on the Unit Square Using Mixed-Integer Nonlinear Optimization}, 2026.}
+       \large $n = 5, \ldots, 10$ on the Unit Square}
+\author{\parbox{\dimexpr\textwidth-2\tabcolsep}{\centering\normalsize Companion to: N.\ Sudermann-Merx, \emph{From Global Optimization to Exact Coordinates:
+Heilbronn's Triangle Problem on the Unit Square Using Mixed-Integer Nonlinear Optimization}, 2026.}}
 \date{}
 
 \begin{document}
@@ -16,13 +16,14 @@ Heilbronn's Triangle Problem on the Unit Square Using Mixed-Integer Nonlinear Op
 \noindent
 This document lists exact coordinates of configurations for
 Heilbronn's triangle problem on the unit square~$[0,1]^2$
-for $n = 5, \ldots, 9$.
+for $n = 5, \ldots, 10$.
 They were obtained by solving a mixed-integer nonlinear program (MINLP)
 with Gurobi to global optimality within solver tolerances and then deriving
 exact symbolic coordinates with SymPy. All triangle areas are verified in exact
 arithmetic. The configurations are proven optimal for $n\le 8$ (see the paper
-for references). For $n=9$, the value is a rigorous lower bound that matches
+for references). For $n=9$ and $n=10$, the value is a rigorous lower bound that matches
 the solver's numerical upper bound, but no rigorous proof of optimality is known.
+For $n=10$, the upper bound also rests on the numerical upper bound for $\Delta_9$.
 The derivation is fully automated by the script
 \texttt{exact\_coordinates.py} included in this repository.
 
@@ -120,8 +121,8 @@ $8$ & $\frac{1}{6}+\frac{\sqrt{13}}{6}$ & $\frac{2}{9}+\frac{\sqrt{13}}{9}$ \\
 %% ===================================================================
 \section*{$n = 9$: \quad $\Delta(P) = -\dfrac{11}{64}+\dfrac{9\sqrt{65}}{320} \approx 0.05488$}
 
-Eleven critical triangles. Configuration with four-fold rotational
-symmetry. The polynomial system of the critical triangles has a unique solution in the unit square, involving $\sqrt{65}$ (this does not imply global uniqueness).
+Eleven critical triangles. Configuration symmetric under the reflection
+in a diagonal. The polynomial system of the critical triangles has a unique solution in the unit square, involving $\sqrt{65}$ (this does not imply global uniqueness).
 
 \begin{center}
 \begin{tabular}{c c c}
@@ -137,6 +138,36 @@ $6$ & $\frac{1}{4}+\frac{\sqrt{65}}{20}$ & $\frac{3}{4}-\frac{\sqrt{65}}{20}$ \\
 $7$ & $\frac{7}{16}+\frac{3\sqrt{65}}{80}$ & $0$ \\[4pt]
 $8$ & $\frac{\sqrt{65}}{10}$ & $1$ \\[4pt]
 $9$ & $1$ & $\frac{5}{8}+\frac{\sqrt{65}}{40}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%% ===================================================================
+\section*{$n = 10$: \quad $\Delta(P) = \dfrac{5}{8}g^2-\dfrac{1}{2}g^3 \approx 0.04654$}
+
+Sixteen critical triangles. Configuration symmetric under the reflections in
+both diagonals, found by Comellas and Yebra (2002). Here $g\approx 0.3156$ is the real root of
+$12g^3-27g^2+20g-4$, explicitly
+$g=\frac34-\frac{(63+8\sqrt{62})^{1/3}}{12}-\frac{1}{12(63+8\sqrt{62})^{1/3}}$.
+The equal-area conditions alone leave a one-parameter family. The configuration
+is the point of this family with the largest common area, obtained with an
+additional stationarity condition.
+
+\begin{center}
+\begin{tabular}{c c c}
+\toprule
+Pt & $x$ & $y$ \\
+\midrule
+$1$ & $0$ & $1-3g+2g^2$ \\[4pt]
+$2$ & $1-3g+2g^2$ & $0$ \\[4pt]
+$3$ & $1$ & $3g-2g^2$ \\[4pt]
+$4$ & $3g-2g^2$ & $1$ \\[4pt]
+$5$ & $0$ & $1-\frac{g}{2}$ \\[4pt]
+$6$ & $\frac{g}{2}$ & $1$ \\[4pt]
+$7$ & $g$ & $g$ \\[4pt]
+$8$ & $1-g$ & $1-g$ \\[4pt]
+$9$ & $1-\frac{g}{2}$ & $0$ \\[4pt]
+$10$ & $1$ & $\frac{g}{2}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
