@@ -6,7 +6,7 @@
      ../verification/count_copies.py (exact arithmetic)
   3. Critical and distinct triangle areas for n = 5..16, ../verification/distinct_areas.py
   4. Runtime of the symbolic Step 2, fed with the NEW Gurobi solutions of
-     block A (seed 0), using ../exact_coordinates/exact_coordinates.py.
+     block A (seed 0) and block G (n=10), using ../exact_coordinates/exact_coordinates.py.
      The hand-written ansaetze expect the labeled copies in
      ../exact_coordinates/solver_solutions_square, so each new solution is first mapped onto that copy by a
      symmetry of the square and a relabeling. If no copy matches (n=6, whose
@@ -85,8 +85,8 @@ def symbolic_times():
     spec.loader.exec_module(mod)
     mod.SOLUTION_DIR = sol_dir
     times = {}
-    for n in range(5, 10):
-        src = HERE / "out" / "solutions" / f"A_full_n{n}_s0.json"
+    for n in range(5, 11):
+        src = HERE / "out" / "solutions" / (f"A_full_n{n}_s0.json" if n < 10 else "G_full_n10_s0.json")
         if not src.exists():
             times[n] = "missing solution"
             continue

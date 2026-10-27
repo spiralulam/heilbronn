@@ -2,7 +2,8 @@
 are feasible for the final model P*_Delta (Table "copies" of the paper).
 
 Procedure, in exact arithmetic (SymPy, coordinates in Q(sqrt 3), Q(sqrt 13),
-Q(sqrt 65), or Q(f) with f a root of 19f^3-27f^2+11f-1):
+Q(sqrt 65), Q(f) with f a root of 19f^3-27f^2+11f-1, or Q(z) with z the real
+root of 12z^3-27z^2+20z-4):
   1. Apply each of the 8 symmetries g of the square to the optimal
      configuration P.
   2. For every ordered choice of five distinct points (p1,...,p5) of g(P),
@@ -21,15 +22,17 @@ from itertools import combinations, permutations, groupby
 import sympy as sp
 
 sys.path.insert(0, '.')
-from verify_exact import configs, f7          # exact coordinates of Section 6
+from verify_exact import configs, f7, z10, cub10   # exact coordinates of Section 6
 
 def num(e):
-    return sp.sympify(e).subs(sp.Symbol('f'), f7)
+    return sp.sympify(e).subs({sp.Symbol('f'): f7, sp.Symbol('z'): z10})
 
 def simp(e):
     e = sp.sympify(e)
     if e.has(sp.Symbol('f')):
         return sp.rem(sp.expand(e), 19*sp.Symbol('f')**3 - 27*sp.Symbol('f')**2 + 11*sp.Symbol('f') - 1, sp.Symbol('f'))
+    if e.has(sp.Symbol('z')):
+        return sp.rem(sp.expand(e), cub10, sp.Symbol('z'))
     return sp.nsimplify(sp.radsimp(sp.expand(e)))
 
 def is_zero(e):
@@ -89,7 +92,7 @@ def count(n):
     return found, per_g
 
 if __name__ == "__main__":
-    for n in (5, 7, 8, 9):
+    for n in (5, 7, 8, 9, 10):
         found, per_g = count(n)
         print(f"n={n}: {len(found)} feasible labeled copies")
         for gname, h in per_g.items():

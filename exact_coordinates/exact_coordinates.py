@@ -409,12 +409,86 @@ def solve_n9():
     return exact, min_area
 
 
+# ── n = 10 ─────────────────────────────────────────────────────────────────
+
+def solve_n10():
+    """
+    H_10 is a root of a cubic.  16 critical triangles.
+
+    Boundary: p0, p4 left, p1, p8 bottom, p2, p9 right, p3, p5 top.
+    From numerics (seed-0 solution of the n=10 run, Section 4.7):
+        x1 ~ y0, y2 ~ 1 - y0, x3 ~ 1 - y0, x5 ~ 1 - y4, x8 ~ y4,
+        y9 ~ 1 - y4, y6 ~ x6, p7 ~ (1 - x6, 1 - x6).
+    Free: a = y0, b = y4, c = x6  (3 unknowns).
+
+    Unlike n <= 9, the equal-area system does not determine the
+    configuration: the 16 critical areas take only three distinct forms
+    A1, A2, A3, so A1 = A2 = A3 leaves a curve of solutions.  The optimum
+    maximizes the common area along this curve, so we add the Lagrange
+    condition det(grad A1, grad A2, grad A3) = 0.  Lex Groebner basis,
+    after removing the degenerate component b = 0, gives
+        (2c - 1)(12 c^3 - 27 c^2 + 20 c - 4) = 0,
+    and a, b as polynomials in c.  The root c = 1/2 is spurious.  This is
+    the configuration of Comellas and Yebra (2002), up to a symmetry.
+    """
+    num_pts, _ = load_solution(10)
+    n = 10
+    crits = critical_triangles(num_pts, n)
+
+    a, b, c, t = sp.symbols('a b c t')
+    pts = {0: (0, a), 1: (a, 0), 2: (1, 1 - a), 3: (1 - a, 1), 4: (0, b),
+           5: (1 - b, 1), 6: (c, c), 7: (1 - c, 1 - c), 8: (b, 0), 9: (1, 1 - b)}
+    syms = [a, b, c]
+
+    forms = []
+    for tri in crits:
+        A = sp.expand(oriented_area(pts, num_pts, tri))
+        if not any(sp.expand(A - B) == 0 for B in forms):
+            forms.append(A)
+    print(f"  {len(crits)} critical triangles, {len(forms)} distinct area forms")
+    assert len(forms) == 3, "ansatz does not match"
+    jac = sp.Matrix([[sp.diff(A, v) for v in syms] for A in forms]).det()
+    polys = [forms[0] - forms[1], forms[0] - forms[2], sp.expand(jac),
+             1 - t * a * b * c]                     # a, b, c != 0
+    G = [g for g in sp.groebner(polys, [t] + syms, order='lex')
+         if t not in g.free_symbols]
+
+    univar = next(sp.Poly(g, c) for g in reversed(G) if g.free_symbols == {c})
+    num_target = {a: num_pts[0][1], b: num_pts[4][1], c: num_pts[6][0]}
+    # the irreducible factor that vanishes at the numerical c
+    fac = min((f for f, _ in sp.factor_list(univar)[1]),
+              key=lambda f: min(abs(complex(r) - num_target[c]) for r in f.nroots()))
+    print(f"  Univariate: {sp.factor(univar.as_expr())} = 0, factor {fac.as_expr()}")
+    idx = min(range(len(fac.real_roots())),
+              key=lambda k: abs(float(sp.CRootOf(fac, k)) - num_target[c]))
+    root = sp.CRootOf(fac, idx)
+
+    # restricted to the cubic, the basis expresses a and b as polynomials in c
+    G2 = sp.groebner(G + [fac.as_expr()], syms, order='lex')
+    sol = {}
+    for g in G2:
+        var = (g.free_symbols & {a, b})
+        if len(var) == 1 and sp.degree(g, list(var)[0]) == 1:
+            v = var.pop()
+            sol[v] = sp.solve(g, v)[0]
+    assert set(sol) == {a, b}, f"incomplete: {G2}"
+    print(f"  a = {sp.expand(sol[a])},  b = {sp.expand(sol[b])}")
+    sol = {v: e.subs(c, root) for v, e in sol.items()}
+    sol[c] = root
+
+    exact = make_exact(pts, n, sol)
+    min_area = sp.simplify(oriented_area(pts, num_pts, crits[0]).subs(sol))
+
+    print_result(exact, n, min_area)
+    return exact, min_area
+
+
 # ── CLI ────────────────────────────────────────────────────────────────────
 
-SOLVERS = {5: solve_n5, 6: solve_n6, 7: solve_n7, 8: solve_n8, 9: solve_n9}
+SOLVERS = {5: solve_n5, 6: solve_n6, 7: solve_n7, 8: solve_n8, 9: solve_n9, 10: solve_n10}
 
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
-    ns = [int(args[0])] if args else [5, 6, 7, 8, 9]
+    ns = [int(args[0])] if args else [5, 6, 7, 8, 9, 10]
     for nn in ns:
         SOLVERS[nn]()

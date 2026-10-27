@@ -2,7 +2,7 @@
 
 For n = 5..9 the coordinates of Tables 4-8 are entered symbolically, and for
 n = 10 the configuration of Comellas and Yebra (Appendix B), which is optimal
-within solver tolerances (Section 4.7). For every
+within solver tolerances (Section 4.7), in the labeling of Appendix A. For every
 one of the C(n,3) triangles the signed area is computed in exact arithmetic
 over the relevant number field, the minimum is identified exactly, and the
 number of triangles attaining it and the number of distinct areas are counted.
@@ -20,7 +20,6 @@ f7 = sp.CRootOf(cub, 1)            # middle real root, approx 0.5839
 z = sp.symbols('z')
 cub10 = 12*z**3 - 27*z**2 + 20*z - 4    # minimal polynomial of z = 3/4 - c/12 - 1/(12c), c^3 = 63+8 sqrt(62)
 z10 = sp.CRootOf(cub10, 0)         # its only real root, approx 0.3156
-x10, y10 = z/2, 1 - 3*z + 2*z**2
 
 configs = {
  5: [(0, R(1,3)), (s3/3, 0), (1, 1 - s3/3), (R(2,3), 1), (0, 1)],
@@ -33,8 +32,8 @@ configs = {
  9: [(0, 1-s65/10), (R(3,8)-s65/40, 0), (1, R(9,16)-3*s65/80), (R(3,8)-s65/40, 1),
      (0, R(5,8)+s65/40), (R(1,4)+s65/20, R(3,4)-s65/20), (R(7,16)+3*s65/80, 0),
      (s65/10, 1), (1, R(5,8)+s65/40)],
- 10: [(x10, 0), (1-y10, 0), (0, x10), (1, y10), (1-z, z), (z, 1-z), (0, 1-y10), (1, 1-x10),
-      (y10, 1), (1-x10, 1)],
+ 10: [(0, 1-3*z+2*z**2), (1-3*z+2*z**2, 0), (1, 3*z-2*z**2), (3*z-2*z**2, 1), (0, 1-z/2),
+      (z/2, 1), (z, z), (1-z, 1-z), (1-z/2, 0), (1, z/2)],
 }
 claimed = {5: s3/9, 6: R(1,8), 6.1: R(1,8), 7: f - R(1,2), 8: (s13-1)/36, 9: (9*s65-55)/320, 10: R(5,8)*z**2 - z**3/2}
 

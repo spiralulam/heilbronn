@@ -26,7 +26,7 @@ The version of this repository that accompanies the first submission is tagged
 - **experiments/** — The MINLP models and the computational study of the paper (run plan, driver, tables)
 - **optimization_models/** — The Gurobi formulations of the first submission (kept for reference)
 - **best-known-configurations/** — Point configurations for n = 3, …, 16 as JSON (full-precision doubles, status, source, exact value or minimal polynomial)
-- **exact_coordinates/** — Exact symbolic coordinates for n = 5, …, 9 (SymPy) and the Gurobi solutions they start from
+- **exact_coordinates/** — Exact symbolic coordinates for n = 5, …, 10 (SymPy) and the Gurobi solutions they start from
 - **verification/** — Exact checks: all triangle areas for n = 5, …, 10 (`verify_exact.py`), copies of an optimum feasible for the final model (`count_copies.py`, `check_symmetric_feasible.py`), critical and distinct areas (`distinct_areas.py`), LICQ by exact rank (`licq_check.py`)
 - **figures/** — Configuration plots
 
