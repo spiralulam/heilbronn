@@ -1,0 +1,70 @@
+
+Gurobi 13.0.3 (mac64[arm]) logging started Sun Oct 25 17:22:37 2026
+
+Set parameter LogFile to value "~/Research/geometry-problems/heilbronn_square/paper/mpc_revision/experiments/out/logs/A_full_n5_s3.log"
+Set parameter MIPFocus to value 2
+Set parameter Seed to value 3
+Set parameter JSONSolDetail to value 1
+Set parameter TimeLimit to value 43200
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (mac64[arm] - Darwin 25.6.0 25G72)
+
+CPU model: Apple M5 Pro
+Thread count: 15 physical cores, 15 logical processors, using up to 15 threads
+
+Non-default parameters:
+TimeLimit  43200
+MIPFocus  2
+JSONSolDetail  1
+Seed  3
+
+[license information removed]
+Optimize a model with 41 rows, 51 columns and 108 nonzeros (Max)
+Model fingerprint: 0x3b04a628
+Model has 1 linear objective coefficients
+Model has 16 quadratic constraints
+Variable types: 41 continuous, 10 integer (10 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  QMatrix range    [1e+00, 2e+00]
+  QLMatrix range   [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [5e-01, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Presolve removed 23 rows and 32 columns
+Presolve time: 0.00s
+Presolved: 42 rows, 20 columns, 101 nonzeros
+Presolved model has 6 bilinear constraint(s)
+
+Solving non-convex QCP to global optimality
+
+Variable types: 20 continuous, 0 integer (0 binary)
+Found heuristic solution: objective 0.1924501
+Root relaxation presolve removed 2 rows and 1 columns
+Root relaxation presolved: 40 rows, 19 columns, 111 nonzeros
+
+
+Root relaxation: objective 2.954297e-01, 12 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.29543    0    6    0.19245    0.29543  53.5%     -    0s
+     0     0    0.23276    0    4    0.19245    0.23276  20.9%     -    0s
+     0     0    0.22949    0    6    0.19245    0.22949  19.2%     -    0s
+     0     0    0.22927    0    6    0.19245    0.22927  19.1%     -    0s
+     0     0    0.21034    0    6    0.19245    0.21034  9.30%     -    0s
+     0     0    0.21034    0    6    0.19245    0.21034  9.30%     -    0s
+H    0     0                       0.1924501    0.21034  9.30%     -    0s
+     0     2    0.21034    0    6    0.19245    0.21034  9.30%     -    0s
+
+Cutting planes:
+  RLT: 1
+
+Explored 51 nodes (153 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 15 (of 15 available processors)
+
+Solution count 1: 0.19245 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.924500848630e-01, best bound 1.924529499525e-01, gap 0.0015%

@@ -13,7 +13,8 @@ The version of this repository that accompanies the first submission is tagged
 |---|---|
 | 3 ≤ n ≤ 8 | proven optimal (literature, see the paper) |
 | 9 | optimal within solver tolerances: the exact value is a rigorous lower bound that matches Gurobi's numerical upper bound, but no rigorous proof is known |
-| 10 ≤ n ≤ 16 | best known. The n = 15 configuration (Sudermann-Merx 2026, heuristic search) replaced Karpov (2011) |
+| 10 | optimal within solver tolerances (new in the revision): the configuration of Comellas and Yebra (2002) is exactly verified, and Gurobi's numerical upper bound lies 1.2e-4 relative above its value. The bound also uses the numerical bound for n = 9 |
+| 11 ≤ n ≤ 16 | best known. The n = 15 configuration (Sudermann-Merx 2026, heuristic search) replaced Karpov (2011) |
 
 <p align="center">
   <img src="figures/fig_n=9.png" alt="Configuration for n = 9" width="350"/>
@@ -26,7 +27,7 @@ The version of this repository that accompanies the first submission is tagged
 - **optimization_models/** — The Gurobi formulations of the first submission (kept for reference)
 - **best-known-configurations/** — Point configurations for n = 3, …, 16 as JSON (full-precision doubles, status, source, exact value or minimal polynomial)
 - **exact_coordinates/** — Exact symbolic coordinates for n = 5, …, 9 (SymPy) and the Gurobi solutions they start from
-- **verification/** — Exact checks: all triangle areas (`verify_exact.py`), copies of an optimum feasible for the final model (`count_copies.py`, `check_symmetric_feasible.py`), critical and distinct areas (`distinct_areas.py`), LICQ by exact rank (`licq_check.py`)
+- **verification/** — Exact checks: all triangle areas for n = 5, …, 10 (`verify_exact.py`), copies of an optimum feasible for the final model (`count_copies.py`, `check_symmetric_feasible.py`), critical and distinct areas (`distinct_areas.py`), LICQ by exact rank (`licq_check.py`)
 - **figures/** — Configuration plots
 
 ## Interactive App

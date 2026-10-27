@@ -1,7 +1,7 @@
 {
   "n": 10,
   "delta_n": 0.046537419582541775,
-  "status": "best known",
+  "status": "optimal within solver tolerances, no rigorous proof known (Sudermann-Merx 2026)",
   "source": "Comellas, Yebra (2002)",
   "points": [
     [

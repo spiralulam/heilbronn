@@ -1,0 +1,6 @@
+n=5: 4 critical + 6 box = 10 active, 11 variables, exact rank 10: LICQ holds (0.0s)
+n=6.1: 6 critical + 6 box = 12 active, 13 variables, exact rank 11: LICQ fails (0.0s)
+n=7: 8 critical + 7 box = 15 active, 15 variables, exact rank 15: LICQ holds (0.0s)
+n=9: 11 critical + 8 box = 19 active, 19 variables, exact rank 19: LICQ holds (0.0s)
+n=13: 20 critical + 7 box = 27 active, 27 variables: smallest singular values ['0.0449438', '0.0658776', '0.10003'], largest 4.47951
+n=15: 25 critical + 6 box = 31 active, 31 variables: smallest singular values ['0.021982', '0.0306271', '0.0503026'], largest 5.01554

@@ -1,0 +1,6 @@
+n=5: triangles=10 exact_min_ties=4 strictly_below=0 distinct_areas=4 coords_in_square=True value=0.192450089729875 time=0.06s
+n=6: triangles=20 exact_min_ties=6 strictly_below=0 distinct_areas=3 coords_in_square=True value=0.125000000000000 time=0.01s
+n=6.1: triangles=20 exact_min_ties=6 strictly_below=0 distinct_areas=3 coords_in_square=True value=0.125000000000000 time=0.01s
+n=7: triangles=35 exact_min_ties=8 strictly_below=0 distinct_areas=14 coords_in_square=True value=0.083859009007513 time=0.45s
+n=8: triangles=56 exact_min_ties=12 strictly_below=0 distinct_areas=9 coords_in_square=True value=0.072376424318444 time=0.41s
+n=9: triangles=84 exact_min_ties=11 strictly_below=0 distinct_areas=32 coords_in_square=True value=0.054875999170897 time=4.56s

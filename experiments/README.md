@@ -5,17 +5,17 @@ machine (Apple MacBook Pro, M5 Pro, 15-core CPU, 48 GB), one solver version
 (Gurobi 13.0.3, plus 11.0.1 for block F), one script. `tables.py` writes the
 LaTeX tables of Section 4.
 
-## Run plan (`plan.py`, 69 runs, about 3 days)
+## Run plan (`plan.py`, 71 runs, about 3.5 days)
 
 | Block | Runs | Purpose |
 |---|---|---|
 | A | final model, n=5..9, 5 seeds, 12 h limit | main results, performance variability |
-| B | models for boundary types II and III, n=5..9, 4 h | completeness of the case split |
-| C | baseline model, n=5..7, 4 h | effect of all enhancements together |
+| B | models for boundary types II and III, n=5..9, 4 h, and n=10, 24 h | completeness of the case split |
+| C | baseline model, n=5..7, 4 h (n=7: 1 h) | effect of all enhancements together |
 | D | ablation for n=7..9, 4 h: without boundary pattern, sign fixing, interior order, product substitution, cap z <= Delta_{n-1}; fixed signs without binaries; with strip capacities; with the contact conditions of Lemma 2(C) | contribution of each component |
 | E | warm start from the best-known solution, n=7..9, 4 h | effect of a known incumbent |
 | F | final model under Gurobi 11.0.1, n=7..9, 4 h | solver-version effect in the comparison with Monji et al. |
-| G | final model, n=10, 48 h | outlook |
+| G | final model, n=10, 24 h | the case n=10 (Section 4.7) |
 | post | `post.py`: exact verification, copies of the optimum, distinct areas, LICQ, running time of the symbolic step | Sections 3, 5, 6, 7 |
 
 ## Running it
@@ -38,4 +38,5 @@ lines with `python3 redact_logs.py out/logs/*.log batch.log`.
 - `plan.py`, `run.py`, `run_one.py`, `run.sh`: run plan and driver
 - `known_optima.py`: best-known configurations labeled for the final model (warm start)
 - `post.py`, `tables.py`, `placeholders.py`: post-processing, tables, summary of the numbers
-- `out/`: results, solutions and (redacted) Gurobi logs of the runs reported in the paper
+- `out/`: results, solutions and Gurobi logs of the runs reported in the paper, and `batch.log`.
+  License lines, e-mail addresses and home-directory paths are removed from the logs (`redact_logs.py`)

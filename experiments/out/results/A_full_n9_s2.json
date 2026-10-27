@@ -1,0 +1,90 @@
+{
+ "spec": {
+  "id": "A_full_n9_s2",
+  "block": "A",
+  "variant": "full",
+  "n": 9,
+  "seed": 2,
+  "timelimit": 43200,
+  "env": "g13",
+  "warmstart": false,
+  "opts": {}
+ },
+ "finished": true,
+ "build_time": 0.0058231353759765625,
+ "status": 2,
+ "runtime": 496.7402250766754,
+ "work": 1333.402718623126,
+ "objval": 0.054876783143969175,
+ "objbound": 0.05488159266483953,
+ "mipgap": 8.764217934818577e-05,
+ "nodecount": 19097714.0,
+ "solcount": 10,
+ "n_fixed_signs": 14,
+ "numvars": 263,
+ "numbinvars": 84,
+ "numconstrs": 142,
+ "numqconstrs": 126,
+ "gurobi_version": "13.0.3",
+ "params": {
+  "MIPGap": 0.0001,
+  "MIPGapAbs": 1e-10,
+  "FeasibilityTol": 1e-06,
+  "IntFeasTol": 1e-05,
+  "OptimalityTol": 1e-06,
+  "Threads": 0,
+  "MIPFocus": 2,
+  "Seed": 2,
+  "TimeLimit": 43200.0,
+  "NonConvex": -1
+ },
+ "machine": {
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "python": "3.12.15",
+  "cpu_count": 15,
+  "cpu": "Apple M5 Pro",
+  "perf_cores": "5",
+  "eff_cores": "10",
+  "mem_bytes": "51539607552"
+ },
+ "constr_vio": 6.738465963135321e-07,
+ "points": [
+  [
+   0,
+   0.19377078717188542
+  ],
+  [
+   0.17344233315128316,
+   0
+  ],
+  [
+   1,
+   0.826557123930311
+  ],
+  [
+   0.17344305274774094,
+   1
+  ],
+  [
+   0,
+   0.8265564397545385
+  ],
+  [
+   0.6531123896366445,
+   0.34688713460096327
+  ],
+  [
+   0.739835047179055,
+   0.0
+  ],
+  [
+   0.8062261135611719,
+   1.0
+  ],
+  [
+   1.0,
+   0.26016482873228164
+  ]
+ ],
+ "threads_used": 15
+}

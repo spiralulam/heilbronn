@@ -1,0 +1,27 @@
+{
+ "5": {
+  "seconds": 0.07369208335876465,
+  "ok": true,
+  "source": "new seed-0 solution, mapped onto the submitted copy (max distance 1.1e-16)"
+ },
+ "6": {
+  "seconds": 0.1679980754852295,
+  "ok": true,
+  "source": "submitted solution (no copy of the new solution matches it)"
+ },
+ "7": {
+  "seconds": 0.27701306343078613,
+  "ok": true,
+  "source": "new seed-0 solution, mapped onto the submitted copy (max distance 1.6e-06)"
+ },
+ "8": {
+  "seconds": 0.13894200325012207,
+  "ok": true,
+  "source": "new seed-0 solution, mapped onto the submitted copy (max distance 3.0e-06)"
+ },
+ "9": {
+  "seconds": 0.3746161460876465,
+  "ok": true,
+  "source": "new seed-0 solution, mapped onto the submitted copy (max distance 2.6e-06)"
+ }
+}

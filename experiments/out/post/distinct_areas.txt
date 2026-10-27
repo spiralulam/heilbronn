@@ -1,0 +1,12 @@
+5 crit 4 distinct 4 of 10 min 0.19245008973 None
+6 crit 6 distinct 3 of 20 min 0.125 None
+7 crit 8 distinct 14 of 35 min 0.0838590090075 {'name': 'F. Comellas and J. Yebra', 'date': 'December 2001'}
+8 crit 12 distinct 9 of 56 min 0.0723764243184 {'name': 'F. Comellas and J. Yebra', 'date': 'December 2001'}
+9 crit 11 distinct 32 of 84 min 0.0548759991709 {'name': 'F. Comellas and J. Yebra', 'date': 'December 2001'}
+10 crit 16 distinct 23 of 120 min 0.0465374195825 {'name': 'F. Comellas and J. Yebra', 'date': 'December 2001'}
+11 crit 28 distinct 17 of 165 min 0.037037037037 {'name': 'Michael Goldberg', 'date': '1972'}
+12 crit 20 distinct 17 of 220 min 0.0325988586918 {'name': 'F. Comellas and J. Yebra', 'date': 'December 2001'}
+13 crit 20 distinct 258 of 286 min 0.0270199166691 {'name': 'Peter Karpov', 'date': 'August 2011'}
+14 crit 26 distinct 74 of 364 min 0.024303979621 {'name': 'Mark Beyleveld', 'date': 'August 2006'}
+15 crit 25 distinct 424 of 455 min 0.0212105410055 {'name': 'Nathan Sudermann-Merx', 'date': 'August 2026'}
+16 crit 64 distinct 31 of 560 min 0.0205278592375 {'name': 'Mark Beyleveld', 'date': 'August 2006'}

@@ -1,0 +1,100 @@
+
+Gurobi 13.0.3 (mac64[arm]) logging started Sun Oct 25 19:19:39 2026
+
+Set parameter LogFile to value "~/Research/geometry-problems/heilbronn_square/paper/mpc_revision/experiments/out/logs/D_full_contacts1_n7_s0.log"
+Set parameter MIPFocus to value 2
+Set parameter Seed to value 0
+Set parameter JSONSolDetail to value 1
+Set parameter TimeLimit to value 14400
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (mac64[arm] - Darwin 25.6.0 25G72)
+
+CPU model: Apple M5 Pro
+Thread count: 15 physical cores, 15 logical processors, using up to 15 threads
+
+Non-default parameters:
+TimeLimit  14400
+MIPFocus  2
+JSONSolDetail  1
+
+[license information removed]
+Optimize a model with 281 rows, 199 columns and 893 nonzeros (Max)
+Model fingerprint: 0xb36f66d4
+Model has 1 linear objective coefficients
+Model has 55 quadratic constraints
+Variable types: 94 continuous, 105 integer (105 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  QMatrix range    [1e+00, 2e+00]
+  QLMatrix range   [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e-01, 1e+00]
+  RHS range        [1e+00, 3e+00]
+
+Presolve removed 103 rows and 77 columns
+Presolve time: 0.00s
+Presolved: 250 rows, 123 columns, 803 nonzeros
+Presolved model has 18 bilinear constraint(s)
+
+Solving non-convex MIQCP to global optimality
+
+Variable types: 59 continuous, 64 integer (64 binary)
+Root relaxation presolve removed 72 rows and 32 columns
+Root relaxation presolved: 178 rows, 91 columns, 631 nonzeros
+
+
+Root relaxation: objective 1.250000e-01, 15 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.12500    0   16          -    0.12500      -     -    0s
+H    0     0                      -0.0000000    0.12500      -     -    0s
+     0     0    0.12500    0   20   -0.00000    0.12500      -     -    0s
+H    0     0                       0.0292969    0.12500   327%     -    0s
+     0     0    0.12500    0   20    0.02930    0.12500   327%     -    0s
+     0     0    0.12500    0   12    0.02930    0.12500   327%     -    0s
+     0     0    0.12500    0   11    0.02930    0.12500   327%     -    0s
+H    0     0                       0.0487595    0.12500   156%     -    0s
+     0     0    0.12500    0   11    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   13    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   13    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   18    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   22    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   22    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   22    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   22    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   21    0.04876    0.12500   156%     -    0s
+     0     0    0.12500    0   21    0.04876    0.12500   156%     -    0s
+H    0     0                       0.0715701    0.12500  74.7%     -    0s
+     0     2    0.12500    0   21    0.07157    0.12500  74.7%     -    0s
+H   30    42                       0.0740741    0.12500  68.8%  16.6    0s
+H  124   154                       0.0743049    0.12500  68.2%  17.0    0s
+H  314   216                       0.0746246    0.12500  67.5%  11.5    0s
+H  357   309                       0.0747749    0.12500  67.2%  11.0    0s
+H  648   336                       0.0794168    0.12500  57.4%   9.4    0s
+H  663   336                       0.0838590    0.12500  49.1%   9.3    0s
+H  711   368                       0.0838590    0.12500  49.1%   9.3    0s
+H 1041   497                       0.0838590    0.12500  49.1%   9.0    0s
+*25980   824              47       0.0838593    0.09421  12.3%   9.2    0s
+H26178   812                       0.0838594    0.09245  10.2%   9.2    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 9
+  Lift-and-project: 4
+  Cover: 16
+  Implied bound: 17
+  MIR: 17
+  Flow cover: 63
+  Inf proof: 2
+  RLT: 65
+  Relax-and-lift: 15
+
+Explored 28026 nodes (252308 simplex iterations) in 0.75 seconds (1.65 work units)
+Thread count was 15 (of 15 available processors)
+
+Solution count 10: 0.0838594 0.083859 0.0794168 ... 0.0292969
+No other solutions better than 0.0838594
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.385940764792e-02, best bound 8.385940764792e-02, gap 0.0000%

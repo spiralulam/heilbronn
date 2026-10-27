@@ -101,13 +101,13 @@ def main():
 
     # types II and III
     say("\n## Types II and III (block B)\n")
-    for n in range(5, 10):
+    for n in range(5, 11):
         cells = []
         for v in ("type2", "type3"):
             rs = pick(rows, block="B", n=n, variant=v)
             cells.append(f"{v}: bound {rs[0]['objbound']:.8f}, {fmt_time(rs[0])}" if rs else f"{v}: -")
-        ref = pick(rows, block="A", n=n, seed=0)
-        refv = f"type I value {ref[0]['objval']:.8f}" if ref else ""
+        ref = pick(rows, block="A", n=n, seed=0) or pick(rows, block="G", n=n)
+        refv = f"type I value {ref[0]['objval']:.8f}, bound {ref[0]['objbound']:.8f}" if ref else ""
         say(f"- n={n}: " + " | ".join(cells) + (f" | {refv}" if refv else ""))
 
     # baseline
@@ -146,7 +146,7 @@ def main():
     if g:
         r = g[0]
         gap = (r["objbound"] - r["objval"]) / r["objval"] if r["objval"] else None
-        say(f"\n**4.7 / outlook (n=10, 48 h):** {fmt_time(r)}, objective {r['objval']}, bound {r['objbound']}, "
+        say(f"\n**4.7 / outlook (n=10, 24 h limit):** {fmt_time(r)}, objective {r['objval']}, bound {r['objbound']}, "
             f"relative gap {gap:.2%}" if gap is not None else "")
 
     # post-processing

@@ -1,0 +1,12 @@
+start 2026-10-27 13:04:30
+verify_exact.py: 5.7s, exit 0
+count_copies.py: 44.2s, exit 0
+distinct_areas.py: 0.0s, exit 0
+licq_check.py: 1.1s, exit 0
+symbolic n=5: {'seconds': 0.07369208335876465, 'ok': True, 'source': 'new seed-0 solution, mapped onto the submitted copy (max distance 1.1e-16)'}
+symbolic n=6: {'seconds': 0.1679980754852295, 'ok': True, 'source': 'submitted solution (no copy of the new solution matches it)'}
+symbolic n=7: {'seconds': 0.27701306343078613, 'ok': True, 'source': 'new seed-0 solution, mapped onto the submitted copy (max distance 1.6e-06)'}
+symbolic n=8: {'seconds': 0.13894200325012207, 'ok': True, 'source': 'new seed-0 solution, mapped onto the submitted copy (max distance 3.0e-06)'}
+symbolic n=9: {'seconds': 0.3746161460876465, 'ok': True, 'source': 'new seed-0 solution, mapped onto the submitted copy (max distance 2.6e-06)'}
+exit 0
+end 2026-10-27 13:05:22

@@ -63,7 +63,7 @@ def main():
 
     # B: case models
     lines = []
-    for n in range(5, 10):
+    for n in range(5, 11):
         cells = []
         for v in ("type2", "type3"):
             rs = by(block="B", n=n, variant=v)
@@ -81,7 +81,7 @@ def main():
             ("D", {"cap": False}, False, r"no $z\le\Delta_{n-1}$"),
             ("D", {"freebin": True}, False, "fixed signs w/o binaries"),
             ("D", {"strips": True}, False, "with strip capacities"),
-            ("D", {"contacts": True}, False, "with contact conditions"),
+            # contact conditions of Lemma 2(C): slower at n=7, 8, 9, left out (author, 2026-10-25)
             ("E", {}, True, "warm start"),
             ("F", {}, False, "Gurobi 11.0.1")]
     lines = []

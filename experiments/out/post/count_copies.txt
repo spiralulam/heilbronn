@@ -1,0 +1,19 @@
+n=5: 1 feasible labeled copies
+    identity               1 new
+n=7: 3 feasible labeled copies
+    identity               1 new
+    reflection x=1/2       1 new
+    reflection antidiag.   1 new
+      [(0.0, 0.0), (0.8192, 0.0), (1.0, 0.2873), (0.8648, 1.0), (0.0, 1.0), (0.4161, 0.2873), (0.5074, 0.8061)]
+      [(0.0, 0.1352), (0.7127, 0.0), (1.0, 0.1808), (1.0, 1.0), (0.0, 1.0), (0.1939, 0.4926), (0.7127, 0.5839)]
+      [(0.0, 0.1808), (0.2873, 0.0), (1.0, 0.1352), (1.0, 1.0), (0.0, 1.0), (0.2873, 0.5839), (0.8061, 0.4926)]
+n=8: 7 feasible labeled copies
+    identity               2 new
+    rotation 90            2 new
+    reflection x=1/2       2 new
+    reflection diagonal    1 new
+n=9: 24 feasible labeled copies
+    identity               8 new
+    rotation 90            4 new
+    rotation 180           8 new
+    rotation 270           4 new

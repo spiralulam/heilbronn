@@ -1,0 +1,91 @@
+
+Gurobi 13.0.3 (mac64[arm]) logging started Sun Oct 25 19:20:42 2026
+
+Set parameter LogFile to value "~/Research/geometry-problems/heilbronn_square/paper/mpc_revision/experiments/out/logs/D_full_freebin1_n8_s0.log"
+Set parameter MIPFocus to value 2
+Set parameter Seed to value 0
+Set parameter JSONSolDetail to value 1
+Set parameter TimeLimit to value 14400
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (mac64[arm] - Darwin 25.6.0 25G72)
+
+CPU model: Apple M5 Pro
+Thread count: 15 physical cores, 15 logical processors, using up to 15 threads
+
+Non-default parameters:
+TimeLimit  14400
+MIPFocus  2
+JSONSolDetail  1
+
+[license information removed]
+Optimize a model with 107 rows, 175 columns and 471 nonzeros (Max)
+Model fingerprint: 0x16b47428
+Model has 1 linear objective coefficients
+Model has 73 quadratic constraints
+Variable types: 132 continuous, 43 integer (43 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  QMatrix range    [1e+00, 2e+00]
+  QLMatrix range   [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [8e-02, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Presolve added 45 rows and 0 columns
+Presolve removed 0 rows and 43 columns
+Presolve time: 0.00s
+Presolved: 260 rows, 133 columns, 766 nonzeros
+Presolved model has 27 bilinear constraint(s)
+
+Solving non-convex MIQCP to global optimality
+
+Variable types: 90 continuous, 43 integer (43 binary)
+Root relaxation presolve removed 113 rows and 44 columns
+Root relaxation presolved: 147 rows, 89 columns, 481 nonzeros
+
+
+Root relaxation: objective 8.385901e-02, 14 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.08386    0   28          -    0.08386      -     -    0s
+     0     0    0.08386    0   23          -    0.08386      -     -    0s
+H    0     0                       0.0106486    0.08386   688%     -    0s
+     0     0    0.08386    0   24    0.01065    0.08386   688%     -    0s
+     0     0    0.08386    0   24    0.01065    0.08386   688%     -    0s
+     0     0    0.08386    0   24    0.01065    0.08386   688%     -    0s
+H    0     0                       0.0244887    0.08386   242%     -    0s
+H    0     0                       0.0347868    0.08386   141%     -    0s
+     0     2    0.08386    0   24    0.03479    0.08386   141%     -    0s
+H  841   940                       0.0353265    0.08386   137%  14.8    0s
+H  878   940                       0.0378350    0.08386   122%  14.7    0s
+H 1083   940                       0.0379023    0.08386   121%  14.5    0s
+H 1137   989                       0.0569015    0.08386  47.4%  14.0    0s
+H 1215   989                       0.0625000    0.08386  34.2%  13.7    0s
+H 1399   978                       0.0625000    0.08386  34.2%  13.6    0s
+H 3810  1600                       0.0636610    0.08386  31.7%  13.2    0s
+H 3955  1511                       0.0636610    0.08386  31.7%  13.3    0s
+H13244  2418                       0.0723764    0.08386  15.9%  13.0    0s
+H13522  2456                       0.0723764    0.08386  15.9%  13.0    0s
+H13995  2530                       0.0723764    0.08386  15.9%  13.2    0s
+H19886  3038                       0.0723765    0.08386  15.9%  14.7    0s
+H20336  3090                       0.0723771    0.08386  15.9%  14.7    0s
+H35805  4272                       0.0723772    0.08386  15.9%  16.1    1s
+H103702  7657                       0.0723772    0.08386  15.9%  17.2    3s
+
+Cutting planes:
+  Gomory: 24
+  Implied bound: 27
+  MIR: 6
+  Flow cover: 50
+  Inf proof: 11
+  RLT: 57
+  Relax-and-lift: 22
+
+Explored 166402 nodes (2626404 simplex iterations) in 4.37 seconds (11.60 work units)
+Thread count was 15 (of 15 available processors)
+
+Solution count 10: 0.0723772 0.0723765 0.063661 ... 0.0244887
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.237720644205e-02, best bound 7.238161353901e-02, gap 0.0061%
